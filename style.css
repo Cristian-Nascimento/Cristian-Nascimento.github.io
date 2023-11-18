@@ -12,19 +12,19 @@
 body {
   height: 100vh;
   background: linear-gradient(120deg, #0072eb, #ff0404);
-
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0; /* Remova as margens para garantir uma exibição sem espaços indesejados */
 }
 
 /* Estilo para o contêiner do relógio */
 .relogio {
   display: flex;
+  flex-direction: column; /* Altera a direção para coluna em telas menores */
   align-items: center;
   justify-content: space-around;
-  height: 200px;
-  width: 550px;
+  max-width: 80%; /* Limita a largura para garantir um design responsivo */
   background: transparent;
   border-radius: 3px;
   box-shadow: 0px 8px 10px rgba(0, 0, 0, 1);
@@ -32,18 +32,19 @@ body {
 
 /* Estilo para as divisões dentro do relógio */
 .relogio div {
-  height: 170px;
-  width: 150px;
+  height: 100px; /* Ajusta a altura conforme necessário */
+  width: 100%; /* Utiliza toda a largura do contêiner pai */
+  margin: 10px 0; /* Adiciona espaçamento entre as divisões */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  background-color: transparent; /* Define inicialmente como transparente */
+  background-color: transparent;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, .9);
   border-radius: 7px;
   letter-spacing: 3px;
-  transition: background-color 0.5s ease; /* Adiciona transição para suavizar a mudança de cor */
+  transition: background-color 0.5s ease;
 }
 
 /* Estilo para o relógio durante a manhã */
@@ -67,17 +68,17 @@ body.evening .relogio div {
 body.night .relogio div {
   background-color: rgba(0, 0, 0, 0.7); /* Azul escuro para a noite */
   box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
-}
+ }
 
 /* Estilo para os spans dentro do relógio */
 .relogio span {
   font-weight: bolder;
-  font-size: 60px;
+  font-size: 40px; /* Ajusta o tamanho da fonte para telas menores */
 }
 
 /* Estilo para os spans de tempo dentro do relógio */
-.relogio span.tempo{
-  font-size: 11px;
+.relogio span.tempo {
+  font-size: 9px; /* Ajusta o tamanho da fonte para telas menores */
 }
 
 /* Estilo para a marca d'água */
@@ -85,6 +86,6 @@ body.night .relogio div {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.5); /* Cor e opacidade da marca d'água */
+  font-size: 12px; /* Ajusta o tamanho da fonte para telas menores */
+  color: rgba(255, 255, 255, 0.5);
 }
