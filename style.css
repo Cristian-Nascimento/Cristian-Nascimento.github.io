@@ -1,0 +1,90 @@
+/* Importa as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Define as configurações básicas para resetar margens e preenchimentos e define a fonte padrão */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Configurações para o corpo da página */
+body {
+  height: 100vh;
+  background: linear-gradient(120deg, #0072eb, #ff0404);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo para o contêiner do relógio */
+.relogio {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+  width: 550px;
+  background: transparent;
+  border-radius: 3px;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 1);
+}
+
+/* Estilo para as divisões dentro do relógio */
+.relogio div {
+  height: 170px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: transparent; /* Define inicialmente como transparente */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, .9);
+  border-radius: 7px;
+  letter-spacing: 3px;
+  transition: background-color 0.5s ease; /* Adiciona transição para suavizar a mudança de cor */
+}
+
+/* Estilo para o relógio durante a manhã */
+body.morning .relogio div {
+  color: #000000;
+  background-color: rgba(244, 215, 160, 0.827); /* Tom de bege para a manhã */
+}
+
+/* Estilo para o relógio durante a tarde */
+body.afternoon .relogio div {
+  background-color: rgba(255, 160, 122, 0.7); /* Salmão para a tarde */
+}
+
+/* Estilo para o relógio durante a noite */
+body.evening .relogio div {
+  background-color: rgba(4, 4, 104, 0.7); /* Azul escuro para a noite */
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Estilo para o relógio durante a madrugada */
+body.night .relogio div {
+  background-color: rgba(0, 0, 0, 0.7); /* Azul escuro para a noite */
+  box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Estilo para os spans dentro do relógio */
+.relogio span {
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+/* Estilo para os spans de tempo dentro do relógio */
+.relogio span.tempo{
+  font-size: 11px;
+}
+
+/* Estilo para a marca d'água */
+.marca-dagua {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.5); /* Cor e opacidade da marca d'água */
+}
